@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://smp123:smp123@clustersmp.jn73w.mongodb.net/ClusterSMP?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://smp123:shegoes@clustersmp.jn73w.mongodb.net/ClusterSMP?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }

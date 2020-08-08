@@ -8,11 +8,11 @@ const User = require('../../models/User');
 
 // @route   GET api/profile/me
 // @desc    Get current user's profile
-// @access  Profile
+// @access  Private
 router.get('/me', auth, async (req, res) => {
   try {
-    const profile = await Profile.findOne({ 
-      user: req.user.id
+    const profile = await Profile.findOne({
+      user: req.user.id,
     }).populate('user', ['name', 'avatar']);
 
     if (!profile) {
@@ -24,5 +24,29 @@ router.get('/me', auth, async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
+// @route   Post api/profile/me
+// @desc    Create or update user profile
+// @access  Private
+router.post(
+  '/',
+  [
+    auth,
+    [
+      check('status', 'Status is required')
+        .not()
+        .isEmpty(),
+      check('skills', 'Skills is required')
+        .not()
+        .isEmpty()
+    ]
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+  }
+);
 
 module.exports = router;
