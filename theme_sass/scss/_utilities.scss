@@ -2,24 +2,32 @@
 .container {
   max-width: $max-width;
   margin: auto;
+  overflow: hidden;
+  padding: 0 32px;
+  margin-top: 96px;
+  margin-bottom: 48px;
 }
 
 // Text Styles
 .x-large {
   font-size: 64px;
   line-height: 1.2;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .large {
-  font-size: 24px;
+  font-size: 48px;
   line-height: 1.2px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .lead {
-  font-size: 12px;
-  margin-bottom: 8px;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.text-primary {
+  color: $primary-color;
 }
 
 // Backgrounds
@@ -50,11 +58,11 @@
   display: inline-block;
   background: $light-color;
   color: $dark-grey;
-  padding: 10px, 20px;
+  padding: 6px, 20px;
   border: none;
   cursor: pointer;
-  font-size: 8px;
-  margin-right: 4px;
+  font-size: 16px;
+  margin-right: 8px;
   outline: none;
   transition: all 0.2s ease-in-out;
 
@@ -85,6 +93,28 @@
   &:hover {
     background: lighten($dark-color, 20%);
     color: $white;
+  }
+}
+
+// Alerts
+.alert {
+  padding: 12px;
+  margin: 16px;
+  opacity: 0.9;
+  background: $white;
+  color: $dark-grey;
+
+  &.alert-primary {
+    @include set-background($primary-color);
+  }
+  &.alert-dark {
+    @include set-background($dark-color);
+  }
+  &.alert-success {
+    @include set-background($success-color);
+  }
+  &.alert-danger {
+    @include set-background($danger-color);
   }
 }
 
