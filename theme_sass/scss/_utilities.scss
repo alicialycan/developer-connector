@@ -30,6 +30,16 @@
   color: $primary-color;
 }
 
+.round-img {
+  border-radius: 50%;
+}
+
+.line {
+  height: 1px;
+  background: $grey;
+  margin: 24px 0;
+}
+
 // Backgrounds
 .bg {
   &-primary {
@@ -37,6 +47,7 @@
   }
   &-light {
     @include set-background($light-color);
+    border: $grey 1px solid;
   }
   &-dark {
     @include set-background($dark-color);
@@ -49,7 +60,7 @@
   }
   &-white {
     @include set-background($white);
-    border: $white 1px solid;
+    border: $grey 1px solid;
   }
 }
 
@@ -118,6 +129,29 @@
   }
 }
 
+// Badges
+.badge {
+  font-size: 12px;
+  padding: 1px;
+  text-align: center;
+  margin: 4px;
+  background: $light-color;
+  color: $dark-grey;
+
+  &.badge-primary {
+    @include set-background($primary-color);
+  }
+  &.badge-dark {
+    @include set-background($dark-color);
+  }
+  &.badge-success {
+    @include set-background($success-color);
+  }
+  &.badge-danger {
+    @include set-background($danger-color);
+  }
+}
+
 .dark-overlay {
   height: 100%;
   width: 100%;
@@ -125,4 +159,16 @@
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+// Tables
+.table {
+  th, td {
+    padding: 16px;
+    text-align: left;
+  }
+
+  th {
+    background: $light-color;
+  }
 }

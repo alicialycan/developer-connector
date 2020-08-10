@@ -5,7 +5,7 @@
   &-text {
     display: block;
     margin-top: 5px;
-    color: $grey;
+    color: $dark-grey;
   }
 
   input[type='text'],
@@ -17,7 +17,36 @@
     display: block;
     width: 100%;
     padding: 6px;
-    font-size: 20px;
-    border: 1px solid $white;
+    font-size: 16px;
+    border: 1px solid $grey;
+  }
+
+  input[type='submit'] {
+    font: inherit;
+  }
+
+  .social-input {
+    display: flex;
+
+    i {
+      padding: 0.5rem;
+      width: 4rem;
+
+      &.fa-twitter {
+        color: #38a1f3;
+      }
+      &.fa-facebook {
+        color: #3b5998;
+      }
+      &.fa-instagram {
+        color: #3f729b;
+      }
+      &.fa-youtube {
+        color: #c4302b;
+      }
+      &.fa-linkedin {
+        color: #0077b5;
+      }
+    }
   }
 }
