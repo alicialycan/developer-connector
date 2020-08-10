@@ -10,11 +10,7 @@ import setAuthToken from '../utils/setAuthToken';
 
 // NOTE: Load User
 // NOTE: Set header if token exists
-export const loadUser = () => {
-  if (localStorage) {
-    setAuthToken(localStorage.token);
-  }
-
+export const loadUser = () => async dispatch => {
   try {
     const res = await axios.get('/api/auth');
 
