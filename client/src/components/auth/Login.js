@@ -21,7 +21,7 @@ export const Login = ({ loginUser, isAuthenticated }) => {
 
   // NOTE: Redirect if logged in
   if (isAuthenticated) {
-    return <Redirect to="/dashboard"></Redirect>
+    return <Redirect to="/dashboard" />
   };
 
   return (
