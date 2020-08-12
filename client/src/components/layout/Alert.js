@@ -5,17 +5,17 @@ import { connect } from 'react-redux';
 const Alert = ({ alerts }) =>
   alerts !== null &&
   alerts.length > 0 &&
-  alerts.map(alert => (
+  alerts.map((alert) => (
     <div key={alert.id} className={`alert alert-${alert.alertType}`}>
-      { alert.msg }
+      {alert.msg}
     </div>
   ));
 
 Alert.propTypes = {
-  alerts: PropTypes.array.isRequired,
+  alerts: PropTypes.array.isRequired
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   alerts: state.alert
 });
 

@@ -15,7 +15,7 @@ export const Login = ({ loginUser, isAuthenticated }) => {
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
-    e.prevent.default();
+    e.preventDefault();
     loginUser(email, password);
   };
 
