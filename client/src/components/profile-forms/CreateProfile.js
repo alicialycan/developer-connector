@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -34,6 +35,14 @@ const CreateProfile = props => {
     youtube,
     instagram
   } = formData;
+
+  const onChange = e =>
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const onSubmit = e => {
+    e.preventDefault();
+
+  };
 
   return (
     <Fragment>
