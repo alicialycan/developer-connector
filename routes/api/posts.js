@@ -56,7 +56,7 @@ router.get('/', auth, async (req, res) => {
 // @route   GET api/posts/:id
 // @desc    Get post by ID
 // @access  Private
-router.get('/:id', auth, async (req, res) => {
+router.get('/:id', [auth, checkObjectId('id')], async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
 
@@ -66,9 +66,7 @@ router.get('/:id', auth, async (req, res) => {
     res.json(post);
   } catch (err) {
     console.error(err.message);
-    if (err.kind == 'ObjectId') {
-      return res.status(404).json({ msg: 'Post not found' });
-    }
+
     res.status(500).send('Server Error');
   }
 });
@@ -76,7 +74,7 @@ router.get('/:id', auth, async (req, res) => {
 // @route   DELETE api/posts/:id
 // @desc    Delete a post
 // @access  Private
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', [auth, checkObjectId('id')], async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     // NOTE: Check if post exists
@@ -100,7 +98,7 @@ router.delete('/:id', auth, async (req, res) => {
 // @route   PUT api/posts/like/:id
 // @desc    Like a post
 // @access  Private
-router.put('/like/:id', auth, async (req, res) => {
+router.put('/like/:id', [auth, checkObjectId('id')], async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
 
@@ -121,7 +119,7 @@ router.put('/like/:id', auth, async (req, res) => {
 // @route   PUT api/posts/unlike/:id
 // @desc    Unlike a post
 // @access  Private
-router.put('/unlike/:id', auth, async (req, res) => {
+router.put('/unlike/:id', [auth, checkObjectId('id')], async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
 
@@ -150,6 +148,7 @@ router.put('/unlike/:id', auth, async (req, res) => {
 router.post('/comment/:id', 
   [
     auth,
+    checkObjectId('id'),
     [
       check('text', 'Text is required').not().isEmpty()
     ]
