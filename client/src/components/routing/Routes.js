@@ -8,7 +8,7 @@ import ProfileForm from '../profile-forms/ProfileForm';
 import AddExperience from '../profile-forms/AddExperience';
 import AddEducation from '../profile-forms/AddEducation';
 import Profiles from '../../components/profiles/Profiles';
-import Profile from '../../components/profiles/ProfileItem';
+import Profile from '../../components/profile/Profile';
 import PrivateRoute from './PrivateRoute';
 
 const Routes = props => {
