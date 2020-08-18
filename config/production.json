@@ -1,0 +1,5 @@
+{
+  "mongoURI": "mongodb+srv://smp123:alicialycan@clustersmp.jn73w.mongodb.net/ClusterSMP?retryWrites=true&w=majority",
+  "jwtSecret": "myJwtSecret",
+  "githubToken": "521b4c509de5e5c36c0d8873c9041d679b09ba42"
+}
