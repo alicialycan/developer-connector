@@ -8,8 +8,15 @@
       "type": "pwa-chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-      "url": "http://localhost:3000",
+      "sourceMaps": true,
+      "url": "http://localhost:3000/debug.html",
       "webRoot": "${workspaceFolder}"
-    }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/server.js"
+    },
   ]
 }
