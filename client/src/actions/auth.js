@@ -75,5 +75,5 @@ export const loginUser = (email, password) => async dispatch => {
   }
 };
 
-// Logout
+// Logout User
 export const logoutUser = () => ({ type: LOGOUT });
